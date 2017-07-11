@@ -1,0 +1,16 @@
+<div ng-controller='viewMedicationCtrl'>
+	<form name="viewMedicationForm" novalidate class="form-horizontal">
+		<div class="form-group">
+			<label for="name" class="col-sm-2 control-label">Name</label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control" ng-model="medication.name" id='name' ng-disabled="true" />
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="price" class="col-sm-2 control-label">Price</label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control" ng-model="medication.price" id='price' ng-disabled="true" />
+			</div>
+		</div>
+	</form>
+</div>

@@ -1,0 +1,44 @@
+<div>
+	<div ng-controller="pharmaciesCtrl">
+	<br>
+	<br>
+	<br>
+		<!-- <div class='btn-group pull-right' >
+			<button type="button" class='btn btn-primary' ng-click='first()' ng-disabled='page == 0'>1</button>
+			<button type="button" class='btn btn-primary' ng-click='back()' ng-disabled='page == 0'>PREVIOUS</button>
+			<button type="button" class='btn btn-primary' ng-click='forward()' ng-disabled='page == num_pages-1'>NEXT</button>
+			<button type="button" class='btn btn-primary' ng-click='last()' ng-disabled='page == num_pages-1'>{{num_pages - 1}}</button>
+		</div> -->
+		<table class="table table-hover">
+			<tr>
+				<th>ID</th>
+				<th>Name</th>
+				<th>City</th>
+				<th>Available medications</th>
+				<th colspan="4" style="text-align:center;">Actions</th>
+			</tr>
+			<tr ng-repeat="pharmacy in pharmacies">
+				<td>{{pharmacy.id}}</td>
+				<td>{{pharmacy.name}}</td>
+				<td>{{pharmacy.city}}</td>
+				<td>
+					<div class='form-group'>
+						<select class='form-control'>
+							<option ng-repeat='model in pharmacy.medications'>{{model.name}}</option>
+						</select>
+					</div>
+				</td>
+				<td>
+					<button type = "button" class="btn btn-primary" ng-click = "managePharmacy(pharmacy.id)"><span class = 'glyphicon glyphicon-tasks'></span> Manage medications</button>
+					<button type = "button" class="btn btn-info" ng-click = "viewPharmacy(pharmacy.id)"><span class = 'glyphicon glyphicon-eye-open'></span> View</button>
+					<button type = "button" class="btn btn-warning" ng-click = "editPharmacy(pharmacy.id)"><span class = 'glyphicon glyphicon-edit'></span> Edit</button>
+					<button type = "button" class="btn btn-danger" ng-click = "deletePharmacy(pharmacy.id)"><span class = 'glyphicon glyphicon-trash'></span> Delete</button>
+				</td>				
+			</tr>
+		</table>
+		<div class='btn-group pull-left' >
+			<button type="button" ng-click="addPharmacy()" class='btn btn-primary'>Add</button>
+			<button type="button" ng-click="findPharmacy()" class='btn btn-primary'>Find</button>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,24 @@
+<div ng-controller='viewPharmacyCtrl'>
+	<form name="viewPharmacyForm" novalidate class="form-horizontal">
+		<div class="form-group">
+			<label for="name" class="col-sm-2 control-label">Name</label>
+			<div class="col-sm-10">
+				<input type="text" class='form-control' ng-model="pharmacy.name" id='name' ng-disabled="true" />
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="city" class="col-sm-2 control-label">City</label>
+			<div class="col-sm-10">
+				<input type="text" class='form-control' ng-model="pharmacy.city" id='city' ng-disabled="true" />
+			</div>
+		</div>
+		<div class='form-group'>
+		 	<label for='medications' class="col-sm-2 control-label">Medications list</label>
+		 	<div class="col-sm-10">
+				<select class='form-control'>
+					<option ng-repeat='model in pharmacy.medications'>{{model.name}}</option>
+				</select>
+			</div>
+		</div>
+	</form>
+</div>
